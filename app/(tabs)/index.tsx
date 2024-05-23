@@ -1,10 +1,11 @@
 // 
 
-import { View, Text } from 'react-native'
+import { View, Text, Image, Button } from 'react-native'
 import React from 'react'
-import BlueScreen from '../../components/BlueScreen'
+import { Link, useNavigation } from 'expo-router'
 
 const index = () => {
+  const navigation = useNavigation()
   return (
     // <BlueScreen />
     <View
@@ -15,7 +16,19 @@ const index = () => {
         backgroundColor: '#F5FCFF',
       }}
     >
-      <Text>index</Text>
+      <Text
+      >index</Text>
+      <Image source={require('../../assets/images/react-logo.png')} style={{
+        alignSelf: 'center',
+        width: 100,
+        height: 100,
+      }} />
+
+
+      <Button
+        title="Go to BlueScreen"
+        onPress={() => navigation.navigate('BlueScreen')}
+      />
     </View>
   )
 }
